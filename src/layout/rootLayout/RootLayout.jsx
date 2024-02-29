@@ -10,6 +10,7 @@ const RootLayout = (props) => {
 
       <main>
         <Outlet />
+        {/* تستعمل للعناصر المتغيرة */}
       </main>
       <Footer />
     </>
