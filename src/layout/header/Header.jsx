@@ -39,8 +39,9 @@ const Links = [
   { to: "/", label: "Home" },
   { to: "/about-us", label: "About US" },
   { to: "/blogs", label: "Blogs" },
-  { to: "/contact-us", label: "Home" },
+  { to: "/contact-us", label: "contact-us" },
   { to: "/counter", label: "Counter" },
+  { to: "/dummyData", label: "DummyData" },
 ];
 const Header = () => {
   return (

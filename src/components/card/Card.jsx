@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { Button } from "@mui/material";
 
 const Card = (props) => {
-  const { id, lastName, firstName, age, color, likeSports, onClick } = props;
+  const { id, firstName, lastName, age, color, likeSports, onClick } = props;
 
   return (
     <div className="appCard">
@@ -36,3 +36,27 @@ Card.propTypes = {
 };
 
 export default Card;
+//============================================================
+// 1ere methode
+
+// const Card = (props) => {
+//   return (
+//     <div className="appCard">
+//       <h1>{props.id}</h1>
+//       <br />
+//       <div className="app-container1">
+//         Hello my mane is {props.firstName} name {props.lastName} name ,
+//         <div>I am {props.age} years old</div>
+//         <div style={{ color: props.color }}>I wear {props.color} jacket</div>
+//         <div>
+//           {props.likeSports === true
+//             ? "i like playnig sports"
+//             : "i prefer to stay"}
+//         </div>
+//       </div>
+//       <Button variant="outlined" onClick={btn1}>
+//         Clik me
+//       </Button>
+//     </div>
+//   );
+// };
