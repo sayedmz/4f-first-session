@@ -42,6 +42,7 @@ const Links = [
   { to: "/contact-us", label: "contact-us" },
   { to: "/counter", label: "Counter" },
   { to: "/dummyData", label: "DummyData" },
+  { to: "/destructuring", label: "Destructuring" },
 ];
 const Header = () => {
   return (

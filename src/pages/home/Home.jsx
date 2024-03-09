@@ -59,3 +59,26 @@ const Home = () => {
 };
 
 export default Home;
+
+// map مثلا على  const numb = [5 , 10 , 20 , 40];  const doubleNum =
+// numb.map((numb) => numb * 2);  console.log('doubleNum' , doubleNum)
+// ==========================================================
+//  2eme methode //{" "}
+// <div key={person.id}>
+//    <h1>{person.id}</h1>
+//    <br />
+
+//   <div className="app-container">
+//      hello world my name is {`${person.name}  ${person.lastName}`},
+//     <div> I am {person.age} years old</div>
+
+//     <div style={{ color: person?.cloths?.jacket }}>
+//        I wear a {person?.cloths?.jacket} jacket
+//     </div>
+
+//   </div>
+
+// </div>
+// // {/* ? علامات الاستفهام اذا لم تجد المطلوب اكمل عملك */}
+// {/* لكتابة الرابط بشكل تلقائي */}
+// {/* //ctrl + space + tbae */}

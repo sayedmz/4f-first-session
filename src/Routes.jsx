@@ -7,7 +7,8 @@ import { Route, Routes } from "react-router-dom";
 import Counter from "./pages/counter/Counter";
 import RootLayout from "./layout/rootLayout/RootLayout";
 import { AboutUs } from "./about-us/AboutUs";
-import dummyData from "./utils/DummyData";
+import DummyData from "./utils/DummyData";
+import Destructuring from "./destructuring/Destructuring";
 const MainRoutes = () => {
   return (
     <Routes>
@@ -20,7 +21,8 @@ const MainRoutes = () => {
         <Route path="contact-us" element={<Contact />} />
         <Route path="about-us" element={<AboutUs />} />
         <Route path="counter" element={<Counter />} />
-        <Route path="dummyData" element={<dummyData />} />
+        <Route path="dummyData" element={<DummyData />} />
+        <Route path="destructuring" element={<Destructuring />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
