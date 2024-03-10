@@ -1,3 +1,23 @@
+// .app-header {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   background-color: aquamarine;
+//   height: 52px;
+//   padding: 0 5%;
+//   position: fixed;
+//   width: 90vw;
+//   top: 0;
+//   z-index: 1000;
+//   nav {
+//     ul {
+//       display: flex;
+//       gap: 5px;
+//       list-style-type: none;
+//     }
+//   }
+// }
+
 .app-header {
   display: flex;
   justify-content: space-between;
@@ -14,76 +34,26 @@
       display: flex;
       gap: 5px;
       list-style-type: none;
+      li {
+        a {
+          font-weight: 600;
+          // text-decoration: none;
+          padding: 6px 12px;
+          &.active {
+            color: red;
+            border-bottom: 1px solid red;
+          }
+          &.disabled {
+            color: rgb(91, 89, 89);
+          }
+          &:hover {
+            color: black;
+            border-bottom: 1px solid black;
+            font-weight: 600;
+            transition: 0.5s;
+          }
+        }
+      }
     }
   }
 }
-//==========================================
-// import { Link, NavLink } from "react-router-dom";
-// import "./Header.scss";
-// const Links = [
-//   { to: "/", label: "Home" },
-//   { to: "/about-us", label: "About US" },
-//   { to: "/blogs", label: "Blogs" },
-//   { to: "/contact-us", label: "Home" },
-//   { to: "/counter", label: "Counter" },
-// ];
-// const Header = () => {
-//   return (
-//     <header className="app-header">
-//       <div>LOGO</div>
-//       <nav>
-//         <ul>
-//           {Links.map((link) => (
-//             <li key={link.to}>
-//               <NavLink
-//                 to={link.to}
-//                 className={({ isActive }) => (isActive ? "active" : "disabled")}
-//               >
-//                 {link.label}
-//               </NavLink>
-//             </li>
-//           ))}
-//         </ul>
-//       </nav>
-//       <div>Sign out</div>
-//     </header>
-//   );
-// };
-// export default Header;
-
-// .app-header {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   background-color: lightblue;
-//   height: 52px;
-//   padding: 0 5%;
-//   position: fixed;
-//   width: 90vw;
-//   top: 0;
-//   z-index: 1000;
-//   nav {
-//     ul {
-//       display: flex;
-//       gap: 5px;
-//       list-style-type: none;
-//       li {
-//         a {
-//           padding: 6px 12px;
-//           &.active {
-//             color: red;
-//             border-bottom: 1px solid red;
-//           }
-//           &.disabled {
-//             color: gray;
-//             border-bottom: 1px solid gray;
-//           }
-//           &:hover {
-//             color: black;
-//             border-bottom: 1px solid black;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }

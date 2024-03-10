@@ -9,6 +9,7 @@ import RootLayout from "./layout/rootLayout/RootLayout";
 import { AboutUs } from "./about-us/AboutUs";
 import DummyData from "./utils/DummyData";
 import Destructuring from "./destructuring/Destructuring";
+import BlogDetails from "./pages/blogs/blogDetails/BlogDetails";
 const MainRoutes = () => {
   return (
     <Routes>
@@ -18,6 +19,7 @@ const MainRoutes = () => {
 
         <Route path="" element={<Home />} />
         <Route path="blogs" element={<Blogs />} />
+        <Route path="Blog-details/:blog_id" element={<BlogDetails />} />
         <Route path="contact-us" element={<Contact />} />
         <Route path="about-us" element={<AboutUs />} />
         <Route path="counter" element={<Counter />} />

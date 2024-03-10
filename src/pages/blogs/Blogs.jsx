@@ -1,11 +1,46 @@
 import React from "react";
-import Header from "../../layout/header/Header";
-
+import "./Blogs.scss";
+import Card from "../../components/card/Card";
+import { useNavigate } from "react-router-dom";
 const Blogs = () => {
+  let navigate = useNavigate();
+  const persons = [
+    {
+      id: 1,
+      name: "Jane",
+      lastName: "Doe",
+      age: 36,
+    },
+    {
+      id: 2,
+      name: "John",
+      lastName: "DoeDoe",
+      age: 44,
+      cloths: { jacket: "purple" },
+    },
+    {
+      id: 3,
+      name: "Joe",
+      lastName: "joo",
+      age: 60,
+      cloths: { jacket: "red" },
+    },
+  ]; //array
   return (
-    <div>
-      <Header />
-      Blogs
+    <div className="blogs">
+      {persons.map((person) => (
+        <>
+          <Card
+            id={person?.id}
+            firstName={person?.name}
+            lastName={person?.lastName}
+            age={person?.age}
+            color={person?.cloths?.jacket}
+            likeSports
+            onClick={() => navigate("/Blog-details/" + person?.id)}
+          />
+        </>
+      ))}
     </div>
   );
 };

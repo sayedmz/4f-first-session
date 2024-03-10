@@ -1,3 +1,63 @@
+//2eme methode
+import { Link, NavLink } from "react-router-dom";
+import "./Header.scss";
+const Links = [
+  { to: "/", label: "Home" },
+  { to: "/about-us", label: "About US" },
+  { to: "/blogs", label: "Blogs" },
+  { to: "/contact-us", label: "contact-us" },
+  { to: "/counter", label: "Counter" },
+  { to: "/dummyData", label: "DummyData" },
+  { to: "/destructuring", label: "Destructuring" },
+];
+
+const Header = () => {
+  return (
+    <header className="app-header">
+      <div>LOGO </div>
+      <nav>
+        <ul>
+          {Links.map((link) => {
+            return (
+              <li key={link.to}>
+                <NavLink
+                  to={link.to}
+                  className={({ isActive }) =>
+                    isActive ? "active" : "disabled"
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+      <div>Sign out</div>
+    </header>
+  );
+};
+export default Header;
+//==============================================
+// const Header = () => {
+//   return (
+//     <header className="app-header">
+//       <div>LOGO </div>
+//       <nav>
+//         <ul>
+//           {Links.map((link) => (
+//             <li key={link.to}>
+//               <Link to={link.to}>{link.label}</Link>
+//             </li>
+//           ))}
+//         </ul>
+//       </nav>
+//       <div>Sign out</div>
+//     </header>
+//   );
+// };
+// export default Header;
+//=============================================================
 // import { Link } from "react-router-dom";
 // import "./Header.scss";
 // const Header = () => {
@@ -32,33 +92,3 @@
 // };
 // export default Header;
 // To be continue tomorrow: connect the Links with the routes
-//2eme methode
-import { Link } from "react-router-dom";
-import "./Header.scss";
-const Links = [
-  { to: "/", label: "Home" },
-  { to: "/about-us", label: "About US" },
-  { to: "/blogs", label: "Blogs" },
-  { to: "/contact-us", label: "contact-us" },
-  { to: "/counter", label: "Counter" },
-  { to: "/dummyData", label: "DummyData" },
-  { to: "/destructuring", label: "Destructuring" },
-];
-const Header = () => {
-  return (
-    <header className="app-header">
-      <div>LOGO </div>
-      <nav>
-        <ul>
-          {Links.map((link) => (
-            <li key={link.to}>
-              <Link to={link.to}>{link.label}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-      <div>Sign out</div>
-    </header>
-  );
-};
-export default Header;
