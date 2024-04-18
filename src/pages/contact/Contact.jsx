@@ -96,6 +96,7 @@ const Contact = (props) => {
       {blogData.map((blog) => (
         <>
           <BlogCard
+            id={blog.id}
             title={blog.title}
             content={blog.content}
             date={blog.date}

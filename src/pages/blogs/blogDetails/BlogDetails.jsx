@@ -1,9 +1,31 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import persons from "../../home/Home";
+
 import Card from "../../../components/card/Card";
 
 export const BlogDetails = () => {
+  const persons = [
+    {
+      id: 1,
+      name: "Jane",
+      lastName: "Doe",
+      age: 36,
+    },
+    {
+      id: 2,
+      name: "John",
+      lastName: "DoeDoe",
+      age: 44,
+      cloths: { jacket: "purple" },
+    },
+    {
+      id: 3,
+      name: "Joe",
+      lastName: "joo",
+      age: 60,
+      cloths: { jacket: "red" },
+    },
+  ];
   const params = useParams();
   const { blog_id } = params;
   const filteredUser = persons.filter((el) => el.id === +blog_id);

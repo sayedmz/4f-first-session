@@ -1,7 +1,7 @@
 import React from "react";
 import "./BlogCard.scss";
 export const BlogCard = (props) => {
-  const { title, content, date, tags, author } = props;
+  const { id, title, content, date, tags, author } = props;
   // const blogData = [
   //   {
   //     id: 1,
@@ -93,6 +93,7 @@ export const BlogCard = (props) => {
   // ];
   return (
     <div className="blogCard">
+      <h1>{id}</h1>
       <h2>{title}</h2>
       <p>{content}</p>
       <h3>{date}</h3>

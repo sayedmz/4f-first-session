@@ -10,6 +10,7 @@ import { AboutUs } from "./about-us/AboutUs";
 import DummyData from "./utils/DummyData";
 import Destructuring from "./destructuring/Destructuring";
 import BlogDetails from "./pages/blogs/blogDetails/BlogDetails";
+import { InvestmentCalculator } from "./pages/investment-calculator/InvestmentCalculator";
 const MainRoutes = () => {
   return (
     <Routes>
@@ -25,8 +26,10 @@ const MainRoutes = () => {
         <Route path="counter" element={<Counter />} />
         <Route path="dummyData" element={<DummyData />} />
         <Route path="destructuring" element={<Destructuring />} />
+
         <Route path="*" element={<NotFound />} />
       </Route>
+      <Route path="investment-calculator" element={<InvestmentCalculator />} />
     </Routes>
   );
 };

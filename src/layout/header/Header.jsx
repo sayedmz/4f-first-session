@@ -9,6 +9,7 @@ const Links = [
   { to: "/counter", label: "Counter" },
   { to: "/dummyData", label: "DummyData" },
   { to: "/destructuring", label: "Destructuring" },
+  { to: "/investment-calculator", label: "Investment Calculator" },
 ];
 
 const Header = () => {
@@ -16,7 +17,7 @@ const Header = () => {
     <header className="app-header">
       <div>LOGO </div>
       <nav>
-        <ul>
+        <menu>
           {Links.map((link) => {
             return (
               <li key={link.to}>
@@ -31,7 +32,7 @@ const Header = () => {
               </li>
             );
           })}
-        </ul>
+        </menu>
       </nav>
       <div>Sign out</div>
     </header>
