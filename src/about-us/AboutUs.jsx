@@ -14,6 +14,11 @@ export const AboutUs = () => {
     setValue2((previousValue) => !previousValue); // ===> false
     setValue2((previousValue) => !previousValue); // ===> true  تبقى كما هي
   };
+  const [value3, setValue3] = useState(true);
+  const buttonHandler3 = () => {
+    setValue2((previousValue) => !previousValue); // ===> false
+    setValue2((previousValue) => !previousValue); // ===> true  تبقى كما هي
+  };
   return (
     <div>
       <p>AboutUs</p>
@@ -42,6 +47,16 @@ export const AboutUs = () => {
         color={value2 === true ? "success" : "error"}
         variant="contained"
         onClick={buttonHandler2}
+      >
+        {value2 === true ? "success" : "error"} color
+      </Button>
+      <br />
+      <br />
+      {JSON.stringify(value3)} <br />
+      <Button
+        color={value2 === true ? "success" : "error"}
+        variant="contained"
+        onClick={buttonHandler1}
       >
         {value2 === true ? "success" : "error"} color
       </Button>

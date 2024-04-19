@@ -1,16 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./UserInputs.scss";
 
-const UserInputs = () => {
-  const [userInput, setUserInput] = useState({
-    initialInvestments: 1000,
-    annualInvestments: 1200,
-    expectedReturn: 6,
-    duration: 10,
-  });
-  const changeHandler = (e, inputIdentifier) =>
-    setUserInput((prev) => ({ ...prev, [inputIdentifier]: e.target.value }));
-
+const UserInputs = (props) => {
+  const { onChange, userInput } = props;
   return (
     <section id="user-input">
       <div className="input-group">
@@ -20,7 +12,7 @@ const UserInputs = () => {
             type="number"
             required
             value={userInput.initialInvestments}
-            onChange={(e) => changeHandler(e, "initialInvestments")}
+            onChange={(e) => onChange(e, "initialInvestments")}
           />
         </p>
         <p>
@@ -29,7 +21,7 @@ const UserInputs = () => {
             type="number"
             required
             value={userInput.annualInvestments}
-            onChange={(e) => changeHandler(e, "annualInvestments")}
+            onChange={(e) => onChange(e, "annualInvestments")}
           />
         </p>
         <p>
@@ -38,7 +30,7 @@ const UserInputs = () => {
             type="number"
             required
             value={userInput.expectedReturn}
-            onChange={(e) => changeHandler(e, "expectedReturn")}
+            onChange={(e) => onChange(e, "expectedReturn")}
           />
         </p>
         <p>
@@ -47,7 +39,7 @@ const UserInputs = () => {
             type="number"
             required
             value={userInput.duration}
-            onChange={(e) => changeHandler(e, "duration")}
+            onChange={(e) => onChange(e, "duration")}
           />
         </p>
       </div>
