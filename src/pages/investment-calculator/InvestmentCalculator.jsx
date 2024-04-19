@@ -8,8 +8,8 @@ import Results from "../../components/results/Results";
 
 export const InvestmentCalculator = () => {
   const [userInput, setUserInput] = useState({
-    initialInvestments: 1000,
-    annualInvestments: 1200,
+    initialInvestment: 1000,
+    annualInvestment: 1200,
     expectedReturn: 6,
     duration: 10,
   });
