@@ -5,3 +5,12 @@
 a {
   text-decoration: none;
 }
+#buttonColor1 {
+  width: 150px;
+  height: 50px;
+  border-radius: 18px;
+}
+
+#search {
+  background-color: rgb(251, 251, 239);
+}

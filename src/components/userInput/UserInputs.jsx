@@ -11,7 +11,7 @@ const UserInputs = (props) => {
           <input
             type="number"
             required
-            value={userInput.initialInvestments}
+            value={userInput.initialInvestment}
             onChange={(e) => onChange(e, "initialInvestment")}
           />
         </p>
@@ -20,7 +20,7 @@ const UserInputs = (props) => {
           <input
             type="number"
             required
-            value={userInput.annualInvestments}
+            value={userInput.annualInvestment}
             onChange={(e) => onChange(e, "annualInvestment")}
           />
         </p>

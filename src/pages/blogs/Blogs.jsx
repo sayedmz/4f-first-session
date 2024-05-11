@@ -2,6 +2,10 @@ import React from "react";
 import "./Blogs.scss";
 import Card from "../../components/card/Card";
 import { useNavigate } from "react-router-dom";
+import Panel from "./Panel/Panel";
+import SyncedInputs from "./two input/SyncedInputs";
+import { SyncedInputs1 } from "./two input/SyncedInputs1";
+import Search from "./search/Search";
 const Blogs = () => {
   let navigate = useNavigate();
   const persons = [
@@ -27,21 +31,38 @@ const Blogs = () => {
     },
   ]; //array
   return (
-    <div className="blogs">
-      {persons.map((person) => (
-        <>
-          <Card
-            id={person?.id}
-            firstName={person?.name}
-            lastName={person?.lastName}
-            age={person?.age}
-            color={person?.cloths?.jacket}
-            likeSports
-            onClick={() => navigate("/Blog-details/" + person?.id)}
-          />
-        </>
-      ))}
-    </div>
+    <main>
+      <div className="blogs">
+        {persons.map((person) => (
+          <>
+            <Card
+              id={person?.id}
+              firstName={person?.name}
+              lastName={person?.lastName}
+              age={person?.age}
+              color={person?.cloths?.jacket}
+              likeSports
+              onClick={() => navigate("/Blog-details/" + person?.id)}
+            />
+          </>
+        ))}
+      </div>
+      <hr />
+
+      <Panel />
+
+      <hr />
+
+      <SyncedInputs />
+
+      <hr />
+
+      <SyncedInputs1 />
+
+      <hr />
+      <hr />
+      <Search />
+    </main>
   );
 };
 
