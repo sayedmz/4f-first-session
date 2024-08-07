@@ -11,6 +11,11 @@ import DummyData from "./utils/DummyData";
 import Destructuring from "./destructuring/Destructuring";
 import BlogDetails from "./pages/blogs/blogDetails/BlogDetails";
 import { InvestmentCalculator } from "./pages/investment-calculator/InvestmentCalculator";
+import Home1 from "./pages/home/Home1";
+import Home2 from "./pages/home/Home2";
+import BlogsUrl from "./pages/blogs/BlogsUrl";
+import UrlDetails from "./pages/blogs/blogDetails/UrlDetails";
+import Todos from "./pages/todos/Todos";
 const MainRoutes = () => {
   return (
     <Routes>
@@ -19,8 +24,14 @@ const MainRoutes = () => {
         موجودة Outlet في RootLayout */}
 
         <Route path="" element={<Home />} />
+        <Route path="home1" element={<Home1 />} />
+        <Route path="home2" element={<Home2 />} />
         <Route path="blogs" element={<Blogs />} />
+
         <Route path="Blog-details/:blog_id" element={<BlogDetails />} />
+        <Route path="blogsUrl" element={<BlogsUrl />} />
+        <Route path="UrlDetails/:posts_id" element={<UrlDetails />} />
+        <Route path="todos" element={<Todos />} />
         <Route path="contact-us" element={<Contact />} />
         <Route path="about-us" element={<AboutUs />} />
         <Route path="counter" element={<Counter />} />

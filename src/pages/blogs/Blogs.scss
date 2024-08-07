@@ -3,3 +3,19 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+
+.commentsSection {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  font-size: large;
+  color: red;
+  box-shadow: 2px 2px 2px 2px yellowgreen;
+}
+
+.createPost {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(128, 231, 245);
+}

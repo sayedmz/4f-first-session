@@ -3,13 +3,17 @@ import { Link, NavLink } from "react-router-dom";
 import "./Header.scss";
 const Links = [
   { to: "/", label: "Home" },
-  { to: "/about-us", label: "About US" },
+  { to: "/home1", label: "Home1" },
+  { to: "/home2", label: "Home2" },
+  { to: "/blogsUrl", label: "BlogsUrl" },
   { to: "/blogs", label: "Blogs" },
+  { to: "/todos", label: "Todos" },
+  { to: "/about-us", label: "About US" },
   { to: "/contact-us", label: "contact-us" },
   { to: "/counter", label: "Counter" },
-  { to: "/dummyData", label: "DummyData" },
-  { to: "/destructuring", label: "Destructuring" },
-  { to: "/investment-calculator", label: "Investment Calculator" },
+  { to: "/dummyData", label: "Data" },
+  { to: "/destructuring", label: "Dest" },
+  { to: "/investment-calculator", label: "InvestCal" },
 ];
 
 const Header = () => {
