@@ -6,6 +6,7 @@ import Card2 from "../../components/card/Card2";
 import { Button } from "@mui/material";
 
 const Home2 = () => {
+  //1ere method
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -28,7 +29,6 @@ const Home2 = () => {
         })
         .finally(() => setLoading(false));
     };
-
     getAllPosts();
   }, [page]);
 

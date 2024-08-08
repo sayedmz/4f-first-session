@@ -2,42 +2,42 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import BlogCard from "../../../components/card/BlogCard";
-import { Button, IconButton, TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useQuery } from "@tanstack/react-query";
 
-export const UrlDetails = () => {
+export const QueryDetails = () => {
   const params = useParams();
   const { posts_id } = params;
-  const [post, setPost] = useState([]);
-  const [err, setErr] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [comments, setComments] = useState([]);
+
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  useEffect(() => {
-    setLoading(true);
-    const getPost = () => {
+
+  // comments
+  const { data: comments, isLoading: commentsLoading } = useQuery({
+    queryKey: ["comments", posts_id],
+    queryFn: async () =>
+      axios
+        .get(`https://jsonplaceholder.typicode.com/posts/${posts_id}/comments`)
+        .then((res) => res.data),
+  });
+  //post by id
+  const {
+    data: post,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["poseById", posts_id],
+    queryFn: async () =>
       axios
         .get(`https://jsonplaceholder.typicode.com/posts/${posts_id}`)
         .then((res) => {
-          setPost(res.data);
           setTitle(res.data.title);
           setBody(res.data.body);
-        })
-        .catch(() => setErr(true))
-        .finally(() => setLoading(false));
-    };
-    const getCommentsById = () => {
-      axios
-        .get(`https://jsonplaceholder.typicode.com/posts/${posts_id}/comments`)
-        .then((res) => setComments(res.data))
-        .catch(() => setErr(true))
-        .finally(() => setLoading(false));
-    };
-    getPost();
-    getCommentsById();
-  }, [posts_id]);
-
+          return res.data;
+        }),
+  });
+  //updatePost
   const updatePost = () => {
     axios
       .put(
@@ -50,6 +50,7 @@ export const UrlDetails = () => {
       )
       .then((res) => console.log("res", res));
   };
+  //deletePost
   const deletePost = () => {
     axios
       .delete(`https://jsonplaceholder.typicode.com/posts/${posts_id}`)
@@ -57,14 +58,14 @@ export const UrlDetails = () => {
   };
 
   // if (err) return <h1>No User Found, Try different param </h1>;
-  if (loading) return <div>loading..........</div>;
+  if (isLoading || commentsLoading) return <div>loading..........</div>;
   return (
     <div>
-      <Button component={Link} variant="outlined" to={"/BlogsUrl"}>
+      <Button component={Link} variant="outlined" to={"/blogsQuery"}>
         Back
       </Button>
       <DeleteIcon color="error" onClick={deletePost}></DeleteIcon>
-      {!err ? (
+      {!error ? (
         <section>
           <BlogCard
             key={post.id}
@@ -107,4 +108,4 @@ export const UrlDetails = () => {
     </div>
   );
 };
-export default UrlDetails;
+export default QueryDetails;

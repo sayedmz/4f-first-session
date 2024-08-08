@@ -16,6 +16,10 @@ import Home2 from "./pages/home/Home2";
 import BlogsUrl from "./pages/blogs/BlogsUrl";
 import UrlDetails from "./pages/blogs/blogDetails/UrlDetails";
 import Todos from "./pages/todos/Todos";
+import HomeQuery from "./pages/home/home3";
+import BlogsQuery from "./pages/blogs/BlogsQuery";
+import QueryDetails from "./pages/blogs/blogDetails/QueryDetails";
+
 const MainRoutes = () => {
   return (
     <Routes>
@@ -26,11 +30,17 @@ const MainRoutes = () => {
         <Route path="" element={<Home />} />
         <Route path="home1" element={<Home1 />} />
         <Route path="home2" element={<Home2 />} />
-        <Route path="blogs" element={<Blogs />} />
+        <Route path="homeQuery" element={<HomeQuery />} />
 
+        <Route path="blogs" element={<Blogs />} />
         <Route path="Blog-details/:blog_id" element={<BlogDetails />} />
+
         <Route path="blogsUrl" element={<BlogsUrl />} />
         <Route path="UrlDetails/:posts_id" element={<UrlDetails />} />
+
+        <Route path="blogsQuery" element={<BlogsQuery />} />
+        <Route path="blogsQuery/:posts_id" element={<QueryDetails />} />
+
         <Route path="todos" element={<Todos />} />
         <Route path="contact-us" element={<Contact />} />
         <Route path="about-us" element={<AboutUs />} />
